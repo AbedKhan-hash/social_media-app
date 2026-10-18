@@ -28,22 +28,33 @@ const userSchema = new mongoose.Schema({
     },
 
     follwors:[{
-        type:ongoose.Schema.Types.objectId,
+        type:mongoose.Schema.Types.objectId,
         ref:userInfo,
-
+        default:[],
     }],
 
     following:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:userInfo
+        ref:userInfo,
+        default:[],
     }],
 
     profile:{
         type:String,
+        default:"",
     },
 
     coverImg:{
         type:String,
+        default:"",
+    },
+    bio:{
+        type:String,
+        default:""
+    },
+    link:{
+        type:String,
+        default:""
     }
 
 
