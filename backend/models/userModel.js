@@ -27,19 +27,19 @@ const userSchema = new mongoose.Schema({
         trim:true,
     },
 
-    follwors:[{
-        type:mongoose.Schema.Types.objectId,
-        ref:userInfo,
+    followers:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
         default:[],
     }],
 
     following:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:userInfo,
+        ref:"User",
         default:[],
     }],
 
-    profile:{
+    profileImg:{
         type:String,
         default:"",
     },
@@ -62,4 +62,7 @@ const userSchema = new mongoose.Schema({
 },{timestamps:true})
 
  
-export default mongoose.model('User',userSchema);
+ 
+const User = mongoose.model('User',userSchema);
+
+export default User;
